@@ -27,6 +27,7 @@
 #include <linux/panel_notifier.h>
 
 
+#include <linux/display_state.h>
 #include "mdss_dsi.h"
 #include "mdss_debug.h"
 #ifdef TARGET_HW_MDSS_HDMI
@@ -1297,6 +1298,7 @@ static int mdss_dsi_panel_off(struct mdss_panel_data *pdata)
 
 	panel_notify(PANEL_EVENT_DISPLAY_OFF, pinfo);
 
+	display_on = false;
 end:
 	/* clear idle state */
 	ctrl->idle = false;
