@@ -3052,6 +3052,7 @@ long kgsl_ioctl_gpuobj_alloc(struct kgsl_device_private *dev_priv,
 
 	/* put the extra refcount for kgsl_mem_entry_create() */
 	kgsl_mem_entry_put(entry);
+
 	return 0;
 }
 
@@ -3077,6 +3078,7 @@ long kgsl_ioctl_gpumem_alloc(struct kgsl_device_private *dev_priv,
 
 	/* put the extra refcount for kgsl_mem_entry_create() */
 	kgsl_mem_entry_put(entry);
+
 	return 0;
 }
 
@@ -3102,6 +3104,7 @@ long kgsl_ioctl_gpumem_alloc_id(struct kgsl_device_private *dev_priv,
 
 	/* put the extra refcount for kgsl_mem_entry_create() */
 	kgsl_mem_entry_put(entry);
+
 	return 0;
 }
 
@@ -3217,7 +3220,9 @@ long kgsl_ioctl_cff_syncmem(struct kgsl_device_private *dev_priv,
 
 	kgsl_cffdump_syncmem(dev_priv->device, entry, offset, len, true);
 
+	/* put the extra refcount for kgsl_mem_entry_create() */
 	kgsl_mem_entry_put(entry);
+
 	return 0;
 }
 
