@@ -579,7 +579,6 @@ void wcd9xxx_enable_high_perf_mode(struct snd_soc_codec *codec,
 					WCD9XXX_A_RX_HPH_L_PA_CTL__POR);
 		snd_soc_write(codec, WCD9XXX_A_RX_HPH_R_PA_CTL,
 					WCD9XXX_A_RX_HPH_R_PA_CTL__POR);
-<<<<<<< HEAD
 /* orig
 		snd_soc_write(codec, WCD9XXX_A_RX_HPH_BIAS_PA, 0x57);
 =======
