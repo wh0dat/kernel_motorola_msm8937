@@ -28,6 +28,7 @@
 
 /* enable body stat */
 #define ABOV_TCHCMPSTAT_TCHSTAT1_FLAG   0x0C
+
 /* enable body stat */
 #define ABOV_TCHCMPSTAT_TCHSTAT0_FLAG   0x03
 
@@ -216,11 +217,6 @@ struct abovXX {
 	bool loading_fw;
 
 	struct fw_update fw_update_work;
-
-#if defined(CONFIG_FB)
-	struct work_struct fb_notify_work;
-	struct notifier_block fb_notif;
-#endif
 
 	/* Function Pointers */
 	int (*init)(pabovXX_t this);
